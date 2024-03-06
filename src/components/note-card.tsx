@@ -15,9 +15,7 @@ export function NoteCard({ note }: NoteCardProps) {
             <Dialog.Trigger
                 className="text-left rounded-md bg-slate-800 p-5 flex flex-col gap-3 overflow-hidden relative outline-none hover:ring-2 hover:ring-slate-600 focus-visible:ring-2 focus-visible:ring-lime-400 ">
                 <span className='text-sm font-medium text-slate-300'>
-                    {formatDistanceToNow(note.date.toDateString(), {
-                        addSuffix: true
-                    })}
+                    {formatDistanceToNow(note.date.toDateString(),)}
                 </span>
                 <p className='text-sm leading-6 text-slate-400'>
                     {note.content}
@@ -33,16 +31,14 @@ export function NoteCard({ note }: NoteCardProps) {
                     </Dialog.Close>
                     <div className="flex flex-1 flex-col gap-3 p-5">
                         <span className='text-sm font-medium text-slate-300'>
-                            {formatDistanceToNow(note.date.toDateString(), {
-                                addSuffix: true
-                            })}
+                            {formatDistanceToNow(note.date.toDateString())}
                         </span>
                         <p className='text-sm leading-6 text-slate-400'>
                             {note.content}
                         </p>
                     </div>
                     <button type='button'
-                        className='w-full bg-slate-800 py-4 text-center text-sm text-slate-300 outline-none font-medium group:'>
+                        className='w-full bg-slate-800 py-4 text-center text-sm text-slate-300 outline-none font-medium group'>
                         do you want to <span className='text-red-400 group-hover:underline'>delete</span> this note?
                     </button>
                 </Dialog.Content>

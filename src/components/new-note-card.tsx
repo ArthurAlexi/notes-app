@@ -3,7 +3,11 @@ import { X } from 'lucide-react'
 import { ChangeEvent, FormEvent, useState } from 'react'
 import {toast} from 'sonner'
 
-export function NewNoteCard() {
+interface NewNoteCardProps{
+    onNoteCreated: (content: string)=> void
+}
+
+export function NewNoteCard({ onNoteCreated } : NewNoteCardProps) {
 
     const [shouldShowOnboarding, setShouldShowOnboarding] = useState(true)
     const [content, setContent] = useState('')
@@ -20,6 +24,10 @@ export function NewNoteCard() {
 
     function handleSaveNote(event: FormEvent) {
         event.preventDefault()
+
+        onNoteCreated(content)
+        setContent('')
+        setShouldShowOnboarding(true)
         toast.success('note created successfully')
     }
 
@@ -53,13 +61,14 @@ export function NewNoteCard() {
                                     shouldShowOnboarding ?
                                         (
                                             <p className='text-sm leading-6 text-slate-400'>
-                                                Start by <button className='font-medium text-lime-400 hover:underline outline-none focus-visible:ring-2 focus-visible:ring-lime-400'>recording an audio</button> or if you prefer,
-                                                <button className='font-medium text-lime-400 hover:underline outline-none focus-visible:ring-2 focus-visible:ring-lime-400' onClick={handleStartEditor}>just use text</button>
+                                                Start by <button className='font-medium text-lime-400 hover:underline outline-none focus-visible:ring-2 focus-visible:ring-lime-400 focus-visible:rounded-sm'>recording an audio</button> or if you prefer,
+                                                <button className='font-medium text-lime-400 hover:underline outline-none focus-visible:ring-2 focus-visible:ring-lime-400 focus-visible:rounded-sm' onClick={handleStartEditor}>just use text</button>
                                             </p>
                                         ) : (
                                             <textarea autoFocus
                                                 className='text-sm leading-6 text-slate-400 bg-transparent resize-none flex-1 outline-none'
-                                                onChange={handleContentChange} />
+                                                onChange={handleContentChange} 
+                                                value={content}/>
                                         )
 
                                 }
