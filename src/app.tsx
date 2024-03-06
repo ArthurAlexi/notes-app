@@ -36,7 +36,7 @@ export function App() {
   const filteredNotes = seach !== '' ? notes.filter(note => note.content.toLocaleLowerCase().includes(seach)) : notes
 
   return (
-    <div className="mx-auto max-w-6xl my-12 space-y-6">
+    <div className="mx-auto max-w-6xl my-12 space-y-6 px-5">
       <img src={logo} className='w-[125px] h-[50px]' alt='Notes app' />
       <form className='w-full'>
         <input placeholder='Search in your notes...'
@@ -46,7 +46,7 @@ export function App() {
       </form>
       <div className='h-px bg-slate-700' />
 
-      <div className='grid grid-cols-3 auto-rows-[250px] gap-6 space-x-3'>
+      <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 auto-rows-[250px] gap-6 space-x-3'>
         <NewNoteCard  onNoteCreated={onNoteCreated}/>
         {
           filteredNotes.map((note) => <NoteCard key={note.id} note={note} />)

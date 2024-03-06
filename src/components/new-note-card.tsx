@@ -77,7 +77,7 @@ export function NewNoteCard({ onNoteCreated }: NewNoteCardProps) {
 
     return (
         <Dialog.Root>
-            <Dialog.Trigger className="flex flex-col gap-3 text-left rounded-md bg-slate-700 p-5 overflow-hidden outline-none hover:ring-2 hover:ring-slate-600 focus-visible:ring-2 focus-visible:ring-lime-400">
+            <Dialog.Trigger className="flex flex-col gap-3 text-left md:rounded-md bg-slate-700 p-5 overflow-hidden outline-none hover:ring-2 hover:ring-slate-600 focus-visible:ring-2 focus-visible:ring-lime-400">
 
                 <span className='text-sm font-medium text-slate-200'>
                     Note
@@ -91,7 +91,7 @@ export function NewNoteCard({ onNoteCreated }: NewNoteCardProps) {
             <Dialog.Portal>
                 <Dialog.Overlay className='inset-0 fixed bg-black/50' />
                 <Dialog.Content
-                    className='flex flex-col outline-none overflow-hidden fixed left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 max-w-[640px] w-full h-[60vh] bg-slate-700 rounded-md'>
+                    className='flex flex-col outline-none overflow-hidden fixed inset-0 md:inset-auto md:left-1/2 md:top-1/2 md:-translate-x-1/2 md:-translate-y-1/2 md:max-w-[640px] w-full md::h-[60vh] bg-slate-700 rounded-md'>
                     <Dialog.Close className='absolute top-0 right-0 bg-slate-800 p-1.5 text-slate-400 outline-none hover:text-slate-100  focus-visible:ring-2 focus-visible:ring-lime-400'>
                         <X className='size-5' />
                     </Dialog.Close>
