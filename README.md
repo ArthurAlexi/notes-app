@@ -1,30 +1,30 @@
-# React + TypeScript + Vite
+# [  ᓚᘏᗢ < Notes App >](https://github.com/ArthurAlexi/notes-app)
+#### React + TypeScript + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Currently, two official plugins are available:
+![image](https://github.com/ArthurAlexi/notes-app/assets/90854173/6294a806-63bd-4cec-a6f1-fcb6e2724990)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Introduction
 
-## Expanding the ESLint configuration
+This project allows you to create notes. There are two ways to create them:
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- The first is by typing the test
+- The second is through audio. A browser feature, SpeechRecognition, is used to transcribe speech into text.
 
-- Configure the top-level `parserOptions` property like this:
+To see which browsers have this functionality, visit [this site can I use](https://caniuse.com/)
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
+Notes are saved to local storage.
+
+## Get Started
+
+### requirements
+
+- [Node V >= 20.X.X](https://nodejs.org/en/download)
+
+### Installing
+
+- In the Root, run the command:
+
 ```
-
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+  npm install
+```
