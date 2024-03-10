@@ -54,7 +54,7 @@ export function NewNoteCard({ onNoteCreated }: NewNoteCardProps) {
             console.error(event)
         }
 
-        speechRecognition.start
+        speechRecognition.start()
     }
 
     function handleStopRecord() {
@@ -91,7 +91,7 @@ export function NewNoteCard({ onNoteCreated }: NewNoteCardProps) {
             <Dialog.Portal>
                 <Dialog.Overlay className='inset-0 fixed bg-black/50' />
                 <Dialog.Content
-                    className='flex flex-col outline-none overflow-hidden fixed inset-0 md:inset-auto md:left-1/2 md:top-1/2 md:-translate-x-1/2 md:-translate-y-1/2 md:max-w-[640px] w-full md::h-[60vh] bg-slate-700 rounded-md'>
+                    className='flex flex-col outline-none overflow-hidden fixed inset-0 md:inset-auto md:left-1/2 md:top-1/2 md:-translate-x-1/2 md:-translate-y-1/2 md:max-w-[640px] w-full md:h-[60vh] bg-slate-700 rounded-md'>
                     <Dialog.Close className='absolute top-0 right-0 bg-slate-800 p-1.5 text-slate-400 outline-none hover:text-slate-100  focus-visible:ring-2 focus-visible:ring-lime-400'>
                         <X className='size-5' />
                     </Dialog.Close>
@@ -100,13 +100,13 @@ export function NewNoteCard({ onNoteCreated }: NewNoteCardProps) {
                             <span className='text-sm font-medium text-slate-300'>
                                 Add note...
                             </span>
-                            <p className='text-sm leading-6 text-slate-400'>
+                            <div className='text-sm leading-6 text-slate-400'>
                                 {
                                     shouldShowOnboarding ?
                                         (
                                             <p className='text-sm leading-6 text-slate-400'>
-                                                Start by <button onClick={handleStartRecord} className='font-medium text-lime-400 hover:underline outline-none focus-visible:ring-2 focus-visible:ring-lime-400 focus-visible:rounded-sm'>recording an audio</button> or if you prefer,
-                                                <button onClick={handleStartEditor} className='font-medium text-lime-400 hover:underline outline-none focus-visible:ring-2 focus-visible:ring-lime-400 focus-visible:rounded-sm'>just use text</button>
+                                                Start by <button onClick={handleStartRecord} className='font-medium text-lime-400 hover:underline outline-none focus-visible:ring-2 focus-visible:ring-lime-400 focus-visible:rounded-sm'>recording an audio</button> or if you prefer, 
+                                                <button onClick={handleStartEditor} className='font-medium text-lime-400 hover:underline outline-none focus-visible:ring-2 focus-visible:ring-lime-400 focus-visible:rounded-sm'> just use text</button>
                                             </p>
                                         ) : (
                                             <textarea autoFocus
@@ -117,7 +117,7 @@ export function NewNoteCard({ onNoteCreated }: NewNoteCardProps) {
 
                                 }
 
-                            </p>
+                            </div>
                         </div>
 
                         {
@@ -125,7 +125,7 @@ export function NewNoteCard({ onNoteCreated }: NewNoteCardProps) {
                                 <button type='button'
                                     onClick={handleStopRecord}
                                     className='flex items-center justify-center gap-2  w-full bg-slate-900 py-4 text-center text-sm text-slate-300 outline-none font-semibold hover:text-slate-100'>
-                                    <div className="size-3 roudend-full bg-red-500 animate-ping" />
+                                    <div className="size-3 rounded-full bg-red-500 animate-ping" />
                                     Recornding ... (click to stop)
                                 </button>
                             ) : (
